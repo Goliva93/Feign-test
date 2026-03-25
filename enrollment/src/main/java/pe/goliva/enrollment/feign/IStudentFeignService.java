@@ -7,7 +7,7 @@ import pe.goliva.enrollment.model.StudentDTO;
 
 import java.util.List;
 
-@FeignClient(name = "student-service", url = "http://localhost:8081")
+@FeignClient(name = "student-service")
 public interface IStudentFeignService {
 
     @GetMapping("/api/student/list")

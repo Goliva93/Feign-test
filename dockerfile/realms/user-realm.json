@@ -1,0 +1,55 @@
+{
+  "realm": "goliva-realm",
+  "enabled": true,
+  "displayName": "User Realm (Microservices)",
+  "registrationAllowed": false,
+  "clients": [
+    {
+      "clientId": "api-gateway-client",
+      "name": "API Gateway Client",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "USER"
+      },
+      {
+        "name": "ADMIN"
+      }
+    ]
+  },
+  "users": [
+    {
+      "username": "goliva",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Giomar",
+      "lastName": "Oliva",
+      "email": "goliva@goliva.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "123456",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "USER",
+        "ADMIN"
+      ]
+    }
+  ]
+}

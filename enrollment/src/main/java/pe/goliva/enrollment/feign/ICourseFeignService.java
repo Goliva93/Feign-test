@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import pe.goliva.enrollment.model.CourseDTO;
 
-@FeignClient(name = "course-service", url = "http://localhost:8083")
+@FeignClient(name = "course-service")
 public interface ICourseFeignService {
 
     @GetMapping("/api/courses/{course_id}")
