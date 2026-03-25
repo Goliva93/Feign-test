@@ -1,0 +1,7 @@
+p1. abrir terminal
+p2. en cada py buildear -> mvn clean package -DskipTests
+p3. ejecutar comando: Docker compose up --build -d
+p4. validar que los servicios se hayan levantado en Docker desktop
+p5. importar en postman la colección: postman_collection.json
+p6. primero solicitar el token y luego hacer las consultas requeridas
+p7. en enrollment solo existe hasta full/5

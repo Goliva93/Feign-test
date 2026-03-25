@@ -1,0 +1,161 @@
+{
+  "info": {
+    "_postman_id": "4b84b40a-2023-4b50-92d4-359b7c7c0f73",
+    "name": "enrollment service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6707795"
+  },
+  "item": [
+    {
+      "name": "Consulta Keycloark (Token)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "api-gateway-client",
+              "type": "text",
+              "uuid": "bbad95dd-b205-445c-8118-795df390b984"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text",
+              "uuid": "e970ca60-41cd-4494-b00a-70a196724a21"
+            },
+            {
+              "key": "username",
+              "value": "goliva",
+              "type": "text",
+              "uuid": "b109541f-0226-4c62-aab7-a0f963d985ad"
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "type": "text",
+              "uuid": "21911868-397a-40d6-8968-de8463a14a42"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:9090/realms/goliva-realm/protocol/openid-connect/token",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "realms",
+            "goliva-realm",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        },
+        "description": "enrollment service"
+      },
+      "response": []
+    },
+    {
+      "name": "Consulta API Enrollment (Feign)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJsT2dMSERYT3VYTURKVVhwcXA3YkRpaDRPUUMyNW44N1B4RmZFVGVYMVFjIn0.eyJleHAiOjE3NzQ0NTMxNTEsImlhdCI6MTc3NDQ1Mjg1MSwianRpIjoiMDc0MDYyYjgtM2M1MS00N2I0LTlkZDUtYWY4NTZiYmMwNWM1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9nb2xpdmEtcmVhbG0iLCJzdWIiOiJiOTc4ZjdiOS1kNmUzLTRlYmUtOTQyYy1iYzgzN2Q2ODM3NmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiZWJjYzkyYmUtMjZlOC00ZDA3LWE1ZWUtYWE4ZTAyMTQ2ZjY2IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJBRE1JTiIsIlVTRVIiXX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImViY2M5MmJlLTI2ZTgtNGQwNy1hNWVlLWFhOGUwMjE0NmY2NiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiR2lvbWFyIE9saXZhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZ29saXZhIiwiZ2l2ZW5fbmFtZSI6Ikdpb21hciIsImZhbWlseV9uYW1lIjoiT2xpdmEiLCJlbWFpbCI6ImdvbGl2YUBnb2xpdmEuY29tIn0.fZNkXv-T_7sk15wLVWP4asl9EsUFnbEBIOqlLRgcNvpSTIKAnFaykYrnkoyptaWFHhooPTDFl3YT5xU1NKS6U7p4a4O9Up5ASBlng-ZdIbgE7ZgTc9zB1zbNlvv3TQBbh-sAabTm9pvqwRtKv82Mo7tlYtFhC4BTuJBXgNN_Jmu7hlcCaHcl_BnoWss19_9HRFp_sxJ9r-QvAyD2X91mOR-6vhHNadfTrQV-yGem3KqNPCWVjfLSp0qy7uqVM7x2kyBXgJ1rKbYYmGVwEFY6TgN6N06zJgzkady36wgyawoCtcwOeyLffOfiUO71I_zdwu7DKi0LBVkiVhbpdIdlDw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/enrollments/full/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "enrollments",
+            "full",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consulta API Student",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJsT2dMSERYT3VYTURKVVhwcXA3YkRpaDRPUUMyNW44N1B4RmZFVGVYMVFjIn0.eyJleHAiOjE3NzQ0NTMxNTEsImlhdCI6MTc3NDQ1Mjg1MSwianRpIjoiMDc0MDYyYjgtM2M1MS00N2I0LTlkZDUtYWY4NTZiYmMwNWM1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9nb2xpdmEtcmVhbG0iLCJzdWIiOiJiOTc4ZjdiOS1kNmUzLTRlYmUtOTQyYy1iYzgzN2Q2ODM3NmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiZWJjYzkyYmUtMjZlOC00ZDA3LWE1ZWUtYWE4ZTAyMTQ2ZjY2IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJBRE1JTiIsIlVTRVIiXX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImViY2M5MmJlLTI2ZTgtNGQwNy1hNWVlLWFhOGUwMjE0NmY2NiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiR2lvbWFyIE9saXZhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZ29saXZhIiwiZ2l2ZW5fbmFtZSI6Ikdpb21hciIsImZhbWlseV9uYW1lIjoiT2xpdmEiLCJlbWFpbCI6ImdvbGl2YUBnb2xpdmEuY29tIn0.fZNkXv-T_7sk15wLVWP4asl9EsUFnbEBIOqlLRgcNvpSTIKAnFaykYrnkoyptaWFHhooPTDFl3YT5xU1NKS6U7p4a4O9Up5ASBlng-ZdIbgE7ZgTc9zB1zbNlvv3TQBbh-sAabTm9pvqwRtKv82Mo7tlYtFhC4BTuJBXgNN_Jmu7hlcCaHcl_BnoWss19_9HRFp_sxJ9r-QvAyD2X91mOR-6vhHNadfTrQV-yGem3KqNPCWVjfLSp0qy7uqVM7x2kyBXgJ1rKbYYmGVwEFY6TgN6N06zJgzkady36wgyawoCtcwOeyLffOfiUO71I_zdwu7DKi0LBVkiVhbpdIdlDw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/student",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "student"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consulta API Courses",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJsT2dMSERYT3VYTURKVVhwcXA3YkRpaDRPUUMyNW44N1B4RmZFVGVYMVFjIn0.eyJleHAiOjE3NzQ0NTMxNTEsImlhdCI6MTc3NDQ1Mjg1MSwianRpIjoiMDc0MDYyYjgtM2M1MS00N2I0LTlkZDUtYWY4NTZiYmMwNWM1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL3JlYWxtcy9nb2xpdmEtcmVhbG0iLCJzdWIiOiJiOTc4ZjdiOS1kNmUzLTRlYmUtOTQyYy1iYzgzN2Q2ODM3NmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGktZ2F0ZXdheS1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiZWJjYzkyYmUtMjZlOC00ZDA3LWE1ZWUtYWE4ZTAyMTQ2ZjY2IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJBRE1JTiIsIlVTRVIiXX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImViY2M5MmJlLTI2ZTgtNGQwNy1hNWVlLWFhOGUwMjE0NmY2NiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiR2lvbWFyIE9saXZhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZ29saXZhIiwiZ2l2ZW5fbmFtZSI6Ikdpb21hciIsImZhbWlseV9uYW1lIjoiT2xpdmEiLCJlbWFpbCI6ImdvbGl2YUBnb2xpdmEuY29tIn0.fZNkXv-T_7sk15wLVWP4asl9EsUFnbEBIOqlLRgcNvpSTIKAnFaykYrnkoyptaWFHhooPTDFl3YT5xU1NKS6U7p4a4O9Up5ASBlng-ZdIbgE7ZgTc9zB1zbNlvv3TQBbh-sAabTm9pvqwRtKv82Mo7tlYtFhC4BTuJBXgNN_Jmu7hlcCaHcl_BnoWss19_9HRFp_sxJ9r-QvAyD2X91mOR-6vhHNadfTrQV-yGem3KqNPCWVjfLSp0qy7uqVM7x2kyBXgJ1rKbYYmGVwEFY6TgN6N06zJgzkady36wgyawoCtcwOeyLffOfiUO71I_zdwu7DKi0LBVkiVhbpdIdlDw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/courses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "courses"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

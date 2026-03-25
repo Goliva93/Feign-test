@@ -62,7 +62,7 @@ services:
       KEYCLOAK_ADMIN: admin       # User test
       KEYCLOAK_ADMIN_PASSWORD: admin  # Pass test
     ports:
-      - "9090:8080" # Tu PC (9090) -> Contenedor (8080)
+      - "9090:8080" # PC (9090) -> Contenedor (8080)
     networks:
       - microservices-network
     volumes:
